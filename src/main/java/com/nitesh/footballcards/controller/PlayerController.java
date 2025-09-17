@@ -2,7 +2,9 @@ package com.nitesh.footballcards.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.nitesh.footballcards.model.Player;
 import com.nitesh.footballcards.service.PlayerService;
@@ -27,7 +29,8 @@ public class PlayerController {
 	@GetMapping("/{id}")
 	public Player getPlayerById(@PathVariable int id) {
 		return playerService.getPlayerById(id)
-				.orElseThrow(() -> new RuntimeException("Player not found"));
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+						"Player not found"));
 	}
 
 	@PostMapping

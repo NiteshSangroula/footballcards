@@ -1,13 +1,17 @@
 package com.nitesh.footballcards.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * PlayerCard
  */
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PlayerCard {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

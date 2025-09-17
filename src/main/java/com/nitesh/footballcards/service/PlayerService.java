@@ -47,6 +47,7 @@ public class PlayerService {
 			player.setCountry(updated.getCountry());
 			player.setPosition(updated.getPosition());
 			player.setPhotoUrl(updated.getPhotoUrl());
+			return playerRepository.save(player);
 		}).orElseThrow(() -> new RuntimeException("Player not Found"));
 	}
 
