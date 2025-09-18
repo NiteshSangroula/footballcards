@@ -65,4 +65,21 @@ public class PlayerCardService {
 			card.setTier(Tier.BRONZE);
 	}
 
+	// Filter end points
+	public List<PlayerCard> getCardsByTier(Tier tier) {
+		return playerCardRepository.findByTier(tier);
+	}
+
+	public List<PlayerCard> getCardsByClub(String club) {
+		return playerCardRepository.findByPlayerClub(club);
+	}
+
+	public List<PlayerCard> getCardsByCountry(String country) {
+		return playerCardRepository.findByPlayerCountry(country);
+	}
+
+	public List<PlayerCard> getCardsByPosition(String position) {
+		return playerCardRepository.findByPlayerPosition(position);
+	}
+
 }
